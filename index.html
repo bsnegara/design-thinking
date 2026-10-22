@@ -485,6 +485,7 @@ document.addEventListener('click',e=>{
     if(x.own&&x.st==='ok'&&x.ay===1&&x.att>1)S.tasks[3]=true;
     if(!x.own&&!x.mur&&D.st==='redo')simSantri(x.si,x.ay,x.note)}
   else if(D.open!==undefined){const i=+D.open;S.open=S.open===i?-1:i}
+    
   else if('addmur' in D){S.extraMur=true;S.murs.push({n:'Al-Kafirun',d:'extraMur'});addLog('santri',L.lMurTeach+': Al-Kafirun');toast(L.murAdded);S.utasks[4]=true}
   else if('addsantri' in D){const n=(document.getElementById('ns').value||'').trim()||(L.demoSantri+' '+(S.cs+1)),u=document.getElementById('nu').value;S.cs++;S.students.push({n,p:0,s:0,unit:u,ust:-1});S.atasks[1]=true;toast(L.add+': '+n)}
   else if('addust' in D){const n=(document.getElementById('nust').value||'').trim()||(L.roleU+' '+(S.ust.length+1));S.ust.push({n});S.atasks[2]=true;toast(L.add+': '+n)}
